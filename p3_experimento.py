@@ -53,11 +53,12 @@ def make_csv(xlsx_path, csv_path):
     count = 0
     with csv_path.open("w", newline="", encoding="utf-8") as output:
         writer = csv.writer(output)
-        writer.writerow(["category", "features"])
+        writer.writerow(["features"])
         for row in rows:
             if len(row) != FEATURES + 1:
                 raise ValueError(f"Fila inválida: {row!r}")
-            writer.writerow([row[-1], "(" + ",".join(row[:FEATURES]) + ")"])
+            # La última columna es la clase; P3 solo almacena el vector de 16 atributos.
+            writer.writerow(["(" + ",".join(row[:FEATURES]) + ")"])
             count += 1
     return count
 
@@ -105,8 +106,8 @@ def replicate_to(dsn, target_rows):
     current = int(run_psql(dsn, "SELECT count(*) FROM dry_beans;"))
     while current < target_rows:
         # Duplicar la tabla completa conserva exactamente los mismos vectores.
-        run_psql(dsn, "INSERT INTO dry_beans (category, features_seq, features_idx) "
-                      "SELECT category, features_seq, features_idx FROM dry_beans;")
+        run_psql(dsn, "INSERT INTO dry_beans (features_seq, features_idx) "
+                      "SELECT features_seq, features_idx FROM dry_beans;")
         current = int(run_psql(dsn, "SELECT count(*) FROM dry_beans;"))
     run_psql(dsn, "ANALYZE dry_beans;")
     return current
@@ -127,7 +128,7 @@ def write_scalability_chart(records, output=Path("p3_escalabilidad.svg"),
     left, top, width, height = 70, 30, 650, 310
 
     def point(index, value):
-        x = left + index * width / (len(sizes) - 1)
+        x = left + width / 2 if len(sizes) == 1 else left + index * width / (len(sizes) - 1)
         y = top + height - value / maximum * height
         return x, y
 

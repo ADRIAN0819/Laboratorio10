@@ -1,6 +1,8 @@
 # P3 — KNN con `cube` y GiST
 
 Se cargaron 13 611 vectores del *Dry Bean Dataset*, cada uno de 16 dimensiones.
+La clase del grano no se almacena en esta parte: la tabla sigue exactamente los campos
+solicitados (`id`, `features_seq` y `features_idx`).
 Para cada consulta (Q15, Q2166 y Q4768) y cada `k` (2, 4, 8, 16 y 32), se ejecutó
 `EXPLAIN (ANALYZE, BUFFERS)` sobre `features_seq` y `features_idx`.
 
