@@ -1,7 +1,6 @@
 -- P3 — Búsqueda KNN en PostgreSQL con cube y GiST.
 --
--- Ejecución recomendada (el script Python genera dry_beans_cube.csv):
---   # Primero genere dry_beans_cube.csv con p3_experimento.py.
+-- Ejecución directa (dry_beans_cube.csv ya se incluye en la entrega):
 --   psql "$DATABASE_URL" -f P3_postgresql_gist.sql
 --
 -- No replica datos: eso lo controla p3_experimento.py para poder medir

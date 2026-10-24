@@ -13,8 +13,9 @@ Requisitos: `numpy`, `pandas`, `matplotlib`, `openpyxl`.
 ## P3. KNN en PostgreSQL con `cube` y GiST
 
 Los archivos `P3_postgresql_gist.sql` y `p3_experimento.py` implementan la parte
-de PostgreSQL del enunciado. El script no necesita paquetes de Python: convierte el
-XLSX a vectores `cube` de 16 dimensiones, crea el índice GiST, ejecuta `EXPLAIN
+de PostgreSQL del enunciado. `dry_beans_cube.csv` ya está incluido como insumo de
+16 dimensiones, por lo que el SQL puede ejecutarse directamente sin descargar ni
+generar otro archivo. El script también puede regenerarlo desde el XLSX, crea el índice GiST, ejecuta `EXPLAIN
 ANALYZE` para `k = 2, 4, 8, 16, 32`, guarda las mediciones en
 `p3_resultados.csv` y genera el gráfico de escalabilidad `p3_escalabilidad.svg`.
 También ejecuta el experimento sintético D=2, 4, …, 128 (k=16) y produce
@@ -30,3 +31,6 @@ python3 p3_experimento.py --dsn 'postgresql://usuario:clave@localhost:5432/bd2'
 
 Las consultas Q15, Q2166 y Q4768 se convierten a los ids 16, 2167 y 4769 porque
 el notebook usa índices basados en cero, mientras que PostgreSQL usa `SERIAL` desde 1.
+
+Todos los insumos y resultados necesarios están versionados en el repositorio; no se
+requieren descargas adicionales.
