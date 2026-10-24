@@ -1,15 +1,15 @@
 filas,dimension,datos,k,metodo,ms,nodo_plan
-2,2,20000,16,secuencial,5.206,Limit
-2,2,20000,16,GiST,0.212,Limit
-4,4,20000,16,secuencial,4.36,Limit
-4,4,20000,16,GiST,0.614,Limit
-8,8,20000,16,secuencial,4.222,Limit
-8,8,20000,16,GiST,1.93,Limit
-16,16,20000,16,secuencial,5.169,Limit
-16,16,20000,16,GiST,3.889,Limit
-32,32,20000,16,secuencial,7.891,Limit
-32,32,20000,16,GiST,6.494,Limit
-64,64,20000,16,secuencial,12.822,Limit
-64,64,20000,16,GiST,14.137,Limit
+2,2,20000,16,secuencial,2.673,Limit
+2,2,20000,16,GiST,0.206,Limit
+4,4,20000,16,secuencial,4.374,Limit
+4,4,20000,16,GiST,0.516,Limit
+8,8,20000,16,secuencial,5.615,Limit
+8,8,20000,16,GiST,2.245,Limit
+16,16,20000,16,secuencial,4.64,Limit
+16,16,20000,16,GiST,4.419,Limit
+32,32,20000,16,secuencial,10.258,Limit
+32,32,20000,16,GiST,7.598,Limit
+64,64,20000,16,secuencial,12.958,Limit
+64,64,20000,16,GiST,11.421,Limit
 128,128,20000,16,secuencial,,cube admite como máximo 100 dimensiones
 128,128,20000,16,GiST,,cube admite como máximo 100 dimensiones
