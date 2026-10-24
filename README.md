@@ -1,5 +1,8 @@
 # Laboratorio 10 - Búsqueda por Similitud
 
+La entrega integrada está en `Laboratorio10_completo.ipynb`; contiene P1, P2 y las
+instrucciones reproducibles de P3.
+
 ## P1. Búsqueda por Rango
 
 - `P1_busqueda_rango.ipynb`: búsqueda lineal por rango con distancia euclidiana sobre el Dry Bean Dataset (consultas Q15, Q2166, Q4768 y 5 radios).
